@@ -1,0 +1,28 @@
+ #include <stdio.h>
+//PROTOTYPES
+void accept(int *,int *);
+void calculate(int , int , int *);
+void display(int );
+
+int main()
+{
+    int num1, num2, sum;
+    accept(&num1,&num2);
+    calculate(num1, num2,  &sum); 
+    display(sum);
+    return 0;
+}
+void accept(int *p, int *q)
+{
+   printf("Enter two numbers \n");
+  scanf("%d%d",p,q);
+}
+void calculate(int p, int q, int *s)
+{
+   *s = p + q;
+}
+
+void display(int res)
+{
+   printf("Result is %d\n", res);
+}
