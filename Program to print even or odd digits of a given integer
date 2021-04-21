@@ -1,0 +1,25 @@
+#include<stdlib.h>
+#include<stdio.h>
+#define MAx 100
+int main()
+{
+ int n,i=0,j=0;
+ int a[MAx];
+ printf("Enter the number \n");
+ scanf("%d",&n);
+ printf("The digits in same order are\n");
+ while(n>0)
+ {
+  a[i++] = n % 10;
+  n =n/ 10;
+ }
+ printf("Odd digits are\n");
+ for(j=i-1;j>=0;j--)
+  if(a[j]%2==1)
+   printf("%d\n",a[j]);
+ printf("Even digits are\n");
+ for(j=i-1;j>=0;j--)
+  if(a[j]%2==0)
+    printf("%d\n",a[j]);
+}
+    
