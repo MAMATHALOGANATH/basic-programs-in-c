@@ -1,0 +1,28 @@
+//A number is said to be pronic number if it is a product of two consecutive numbers.
+#include<stdio.h>
+#include<math.h>
+int ispronic(int n)
+{
+    int i, flag=0,sum;
+    while(i<=(sqrt(n)+1))
+    {
+        sum=i*(i+1);
+        if(sum==n)
+        {
+            flag=1;
+            break;
+        }
+        i=i+1;
+    }
+    return flag;
+}
+int main()
+{
+    int n;
+    printf("enter the number\n");
+    scanf("%d",&n);
+    int flag=0,sum=0;
+    ispronic(n)?printf("pronic number\n"):printf("not pronic number\n");
+    return 0;
+}
+
