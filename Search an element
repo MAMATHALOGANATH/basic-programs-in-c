@@ -1,0 +1,57 @@
+/*Write a C program to  search a specified element in array of random elements.
+if the search  is successful then,  the program should  display the following
+1. Search is successful 
+2. the position of first occurance
+3. the position of the last occurance 
+*/
+
+#include<stdio.h>
+void linear_search(int *a,int n)
+{
+    int key,i;
+    printf("enter the key\n");
+    scanf("%d",&key);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==key)
+        {
+            printf("search successful\n");
+            printf("the first occurance of key is at %d\n",i);
+            break;
+        }
+        else
+        {
+            printf("search failure\n");
+        }
+        
+    }
+    for(i=n-1;i>=0;i--)
+    {
+        if(a[i]==key)
+        {
+            printf("the last occurance of key is at %d\n",i);
+            break;
+        }
+    }
+}
+int main()
+{
+    int a[10],i,n;
+    printf("enter the number of array elements\n");
+    scanf("%d",&n);
+    printf("enter the array elements\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("array elements are\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",a[i]);
+    }
+    printf("\n");
+    
+    linear_search(a,n);
+   
+}
+
