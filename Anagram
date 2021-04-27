@@ -1,0 +1,49 @@
+//Program to find whether given string is anagram of each other
+#include <stdio.h>
+ 
+int find_anagram(char [], char []);
+typedef struct str{
+    char array1[20];
+    char array2[20];
+}st;
+typedef struct node {
+    st data;
+}nd;
+int main()
+{
+    nd *t;
+    t = (nd *) malloc(sizeof(nd));
+    int flag;
+ 
+    printf("Enter the string\n");
+    scanf("%s",(t->data).array1);
+    printf("Enter another string\n");
+    scanf("%s",(t->data).array2);
+    int num1[26] = {0}, num2[26] = {0}, i = 0;
+ 
+    while ((t->data).array1[i] != '\0')
+    {
+        num1[(t->data).array1[i] - 'a']++;
+        i++;
+    }
+    i = 0;
+    while ((t->data).array2[i] != '\0')
+    {
+        num2[(t->data).array2[i] -'a']++;
+        i++;
+    }
+    for (i = 0; i < 26; i++)
+    {
+        if (num1[i] != num2[i])
+            flag= 0;
+    }
+    flag=1;
+    
+    if (flag == 1)
+        printf("%s and %s are anagrams.\n", (t->data).array1, (t->data).array2);
+    else
+        printf("%s and %s are not anagrams.\n", (t->data).array1, (t->data).array2);
+
+ 
+    
+}
