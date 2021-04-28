@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#define str_size 100
+#define ch_size 255
+void main()
+{
+    char str[str_size];
+    int chno[ch_size];
+    int i=0,max;
+    int ascii;
+    printf("find maximum occuring character in string:");
+    gets(str);
+    for(i=0;i<ch_size;i++)
+    {
+        chno[i]=0;
+    }
+    i=0;
+    while(str[i]!='\0')
+    {
+        ascii=(int)str[i];
+        chno[ascii]=chno[ascii]+1;
+        i++;
+    }
+    max=0;
+    for(i=0;i<ch_size;i++)
+    {
+        if(i!=32)
+        {
+            if(chno[i]>chno[max])
+                max=i;
+        }
+    }
+    printf("%c appears number of times:%d\n",max,chno[max]);
+    
+}
