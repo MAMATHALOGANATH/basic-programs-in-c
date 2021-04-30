@@ -1,0 +1,61 @@
+/*stack operation*/
+#include<stdio.h>
+#include<stdlib.h>
+#define max 3
+void push(int s[],int* top)
+{
+    int ele;
+    if((*top)==max-1)
+    {
+        printf("stack overflow\n");
+        return;
+    }
+    (*top)++;
+    
+    printf("enter an element\n");
+    scanf("%d",&ele);
+    s[*top]=ele;
+    
+}
+void pop(int s[],int *top)
+{
+    if((*top)==-1)
+    {
+        printf("stack overflow");
+        return;
+    }
+    printf("element to be deleted is %d\n",s[*top]);
+    (*top)--;
+}
+void display(int s[],int *top)
+{
+    if((*top)==-1)
+    {
+        printf("stack overflow");
+        return;
+    }
+    else
+    {
+        printf("elements entered are\n");
+        for(int i=*top;i>=0;i--)
+    {
+        printf("%d\n",s[i]);
+    }
+    }
+}
+int main()
+{
+    int ch,top=-1,s[max];
+    for(;;)
+    {
+        printf("1.push\n2.pop\n3.display\nchoice:");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:push(s,&top);break;
+            case 2:pop(s,&top);break;
+            case 3:display(s,&top);break;
+            default:exit(0);
+        }
+    }
+}
