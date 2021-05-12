@@ -1,0 +1,17 @@
+//Consider :: the use case of a book stall and following details book_id, book_title, author, price*/
+#include <stdio.h>
+int main()
+{
+
+
+struct book
+{
+    int book_id,price; char book_title[100]; char author[100];
+};
+struct book book1={25,100,"Aavarana","Bhairappa"};
+printf("the book id is %d\n",book1.book_id);
+printf("the price of the book is %d\n",book1.price);
+printf("the title of the book is %s\n",book1.book_title);
+printf("the author of the book is %s\n",book1.author);
+return 0;
+}
