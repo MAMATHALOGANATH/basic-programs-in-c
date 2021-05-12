@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+    int a[100],b[100];
+    int num[100],n=0;
+    int cnt=0,max=0;
+
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
+    printf("Enter array elements\n");
+    for(int i=0;i<n;i++)
+        scanf("%d",&num[i]);
+
+     /*for(int i=0;i<n;i++)
+        printf("%d\n",num[i]);*/
+
+    //Max element
+     max=num[0];
+    for(int i=1;i<n;i++)
+    {
+        if(num[i]>max)
+        {
+            max=num[i]; cnt=i;
+        }
+    }
+    //printf("%d\n",max);
+
+
+    for(int i=0;i<cnt;i++)
+    {
+        a[i]=num[i];
+        //printf("%d\t",a[i]);
+    }
+
+    for(int i=cnt+1;i<n;i++)
+    {
+        b[i]=num[i];
+        //printf("%d\t",b[i]);
+    }
+
+    printf("The elements before largest\n");
+    for(int i=0;i<cnt;i++)
+    {
+        printf("%d\n",a[i]);
+    }
+    printf("The elements after largest\n");
+    for(int i=cnt+1;i<n;i++)
+    {
+        printf("%d\n",b[i]);
+    }
+}
