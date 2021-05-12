@@ -1,0 +1,33 @@
+#include <stdio.h>
+struct book{
+    char title[10];
+    char author[10];
+    float price;
+    int no_pages;
+};typedef struct book bk;
+
+void read(bk*);
+void print(bk*);
+
+
+int main()
+{
+    bk bk1;
+    bk*p=&bk1;
+    read(p);
+    print(p);
+    return 0;
+}
+
+void read(bk*p)
+{
+    printf("enter the title,author name,price and number of pages in order");
+    scanf("%s%s%f%d",p->title,p->author,&(p->price),&(p->no_pages));
+    
+}
+
+void print(bk*p)
+{
+    printf("the book details are\n");
+    printf("%s\t%s\t%f\t%d",p->title,p->author,p->price,p->no_pages);
+}
