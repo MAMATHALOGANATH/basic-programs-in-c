@@ -1,0 +1,61 @@
+//a. Create a book database (title, author, rice, no_pages) b. Update the book price based on the title. c. Display appropriate message if updation fails.
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+struct book
+{
+    char book_title[20];
+    char author[10];
+    float price;
+    int no_pages;
+};
+typedef struct book B;
+void read(B a[],int n)
+{
+    printf("Enter the title, author name, price and number of pages in order");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%s%s%f%d",a[i].book_title,a[i].author,&(a[i].price),&(a[i].no_pages));
+    }
+}
+void diplay(B a[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        printf("%s %s %f %d\n",a[i].book_title,a[i].author,(a[i].price),a[i].no_pages);
+    }
+}
+void search(B a[],int n,char key[])
+{
+    int price;
+    for(int i=0;i<n;i++)
+    {
+        if(strcmp(a[i].book_title,key)==0)
+        {
+            printf("Search Sucessfull !\n");
+            printf("Enter the new price\n");
+            scanf("%d",&price);
+            a[i].price=price;
+            return;
+        }
+        else
+        {
+            printf("Search Unsucessfull !\n");
+            break;
+        }
+    }
+}
+int main()
+{
+    B a[10];
+    int n,ch;
+    char key[10];
+    printf("Enter the number of books\n");
+    scanf("%d",&n);
+    read(a,n);
+    diplay(a,n);
+    printf("Enter the title to search\n");
+    scanf("%s",key);
+    search(a,n,key);
+}
